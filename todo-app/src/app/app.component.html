@@ -1,0 +1,7 @@
+<h1>
+  {{title}}
+</h1>
+<p>Counter : {{counter | async}}</p>
+<button id="incrementbtn" (click)="clicked($event)" #incrementbtn >Increment</button>
+<button id="decrementbtn" (click)="clicked($event)" >Decrement</button>
+<button (click)="plus()" >Plus</button>
