@@ -3,7 +3,7 @@ import {IAppState} from './store';
 import { CounterActions_1 } from './app.service';
 import { Observable } from 'rxjs/Observable';
 import { Store } from "@ngrx/store";
-import { INCREMENT, DECREMENT, PLUS } from "app/actions";
+import { INCREMENT, DECREMENT, PLUS, COUNTERBTNS } from "app/actions";
 
 @Component({
   selector: 'app-root',
@@ -13,10 +13,12 @@ import { INCREMENT, DECREMENT, PLUS } from "app/actions";
   
 })
 export class AppComponent {
+  counterbtn:string[];
   counter:number;
   title = 'Counter';
   constructor(private countservice: CounterActions_1,private _store:Store<IAppState>)
-  {
+    {
+      this.counterbtn = COUNTERBTNS;
      _store.map(state=> state['rootCounter']).distinctUntilChanged()
      .subscribe(count=>{
            return this.counter =count.counter;
@@ -26,13 +28,13 @@ export class AppComponent {
 
   clicked(event){
     switch(event.target.id){
-      case 'incrementbtn': 
+      case 'Increment': 
           this.countservice.increment();
       break;
-      case 'decrementbtn':
+      case 'Decrement':
           this.countservice.decrement();
       break;
-      case 'plusbtn':
+      case 'Plus':
           this.countservice.plus();
       break;
     }

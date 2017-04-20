@@ -1,8 +1,3 @@
-<h1>
-  {{title}}
-</h1>
+<h1>{{title}}</h1>
 <h4>Counter : {{counter}}</h4>
-<button id="incrementbtn" (click)="clicked($event)">Increment</button>
-<button id="decrementbtn" (click)="clicked($event)">Decrement</button>
-<button id="plusbtn" (click)="clicked($event)">Plus 10</button>
-
+<button *ngFor="let btn of counterbtn" id="{{btn}}" (click)="clicked($event)">{{btn}}</button>
