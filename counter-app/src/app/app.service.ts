@@ -25,4 +25,12 @@ export class CounterActions_1 {
    plus(){
     return this._store.dispatch({type: PLUS, payload:10})
    }
+
+   login(data){
+     console.log(data);
+     //return this._store.dispatch({type:LOGIN, payload:data})
+   }
+   forgotpass(data){
+    console.log(data);
+   }
 }

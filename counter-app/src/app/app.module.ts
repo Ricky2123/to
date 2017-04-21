@@ -7,10 +7,12 @@ import { AppComponent } from './app.component';
 import { IAppState, rootCounter, INITIAL_STATE } from './store';
 import { CounterActions_1 } from "./app.service";
 import {Store, provideStore} from '@ngrx/store';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

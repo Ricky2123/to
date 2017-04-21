@@ -1,3 +1,22 @@
-<h1>{{title}}</h1>
+<!--<h1>{{title}}</h1>
 <h4>Counter : {{counter}}</h4>
-<button *ngFor="let btn of counterbtn" id="{{btn}}" (click)="clicked($event)">{{btn}}</button>
+<div class="button-group">
+<button class="button" *ngFor="let btn of counterbtn" id="{{btn}}" (click)="clicked($event)">{{btn }}</button>
+</div>-->
+
+<form class="container">
+  <div class="row large-4 columns" *ngFor="let textbox of logininputs">
+    <div class="small-3 columns">
+      <label for="{{textbox.name}}" class="text-right middle">{{textbox.label}}</label>
+    </div>
+    <div class="small-9 columns">
+      <input type="{{textbox.type}}" id="{{textbox.name}}" placeholder="{{textbox.placeholder}}">
+    </div>
+  </div>
+  <div class="row large 4 columns">
+    <div class="small-5 columns"></div>
+    <div class="small-7 columns button-group">
+  <button class="button" *ngFor="let btn of loginBtns" id="{{btn}}" (click)="clicked($event)">{{btn }}</button>  
+    </div>
+  </div>
+</form>
